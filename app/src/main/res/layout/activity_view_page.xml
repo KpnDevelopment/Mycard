@@ -56,8 +56,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"/>
+            android:background="@drawable/botton_custom"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"/>
 
 
 
