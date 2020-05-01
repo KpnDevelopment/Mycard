@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_grid"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings_page">
+
+
+    <ImageView
+        android:id="@+id/appimage"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/android_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/resetlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appimage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/info"/>
+            <TextView
+                android:id="@+id/info_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:paddingStart="15dp"
+                android:text="@string/info"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textSize="21sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/dark_txt"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:paddingStart="15dp"
+                android:text="@string/dark_mode"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textSize="21sp" />
+            <Switch
+                android:id="@+id/darkswitch"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="darkmode"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/versionid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/resetlinear"
+            android:text="@string/version_1_0"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

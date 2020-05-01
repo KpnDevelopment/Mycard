@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_grid"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <RelativeLayout
+            android:id="@+id/relative_layt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/card_icorn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/card_icorn"
+            android:weightSum="2">
+
+
+            <TableRow
+            android:id="@+id/frstrow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view_btn"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:drawableTop="@drawable/icons_view_sany"
+                    android:text="View"
+                    android:textColor="@android:color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/filter_btn"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/icon_filter_sany"
+                    android:text="Filter"
+                    android:textColor="@android:color/black" />
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+
+            <TableRow
+                android:id="@+id/secndrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frstrow">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/update_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableTop="@drawable/icon_upadte_sany"
+                        android:drawableTint="@color/cardview_dark_background"
+                        android:text="@string/update"
+                        android:textColor="@android:color/black" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableTop="@drawable/icon_insert_sany"
+                        android:drawableTint="@color/cardview_dark_background"
+                        android:text="Add"
+                        android:textColor="@android:color/black" />
+
+                </androidx.cardview.widget.CardView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/thirdrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secndrow">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/settings_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableTop="@drawable/settings"
+                        android:drawableTint="@color/cardview_dark_background"
+                        android:text="Settings"
+                        android:textColor="@android:color/black" />
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

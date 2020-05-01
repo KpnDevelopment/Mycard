@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Mycard</string>
+    <string name="update">Update</string>
+    <string name="insert">Insert</string>
+    <string name="enter_the_serial_no">Enter the Serial No</string>
+    <string name="district">District</string>
+    <string name="enter_the_district">Enter the district</string>
+    <string name="enter_the_location">Enter the location</string>
+    <string name="location">Location</string>
+    <string name="serialno">SerialNo</string>
+    <string name="please_enter_district">Please Enter District</string>
+    <string name="state">State</string>
+    <string name="enter_the_state">Enter the state</string>
+    <string name="info">Info</string>
+    <string name="search">Search</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="no_data">No Data</string>
+    <string name="view">View</string>
+    <string name="submit">Submit</string>
+    <string name="sany">SANY</string>
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
+    <string name="name">Name</string>
+    <string name="category_txt">Category</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="mechine">Mechine</string>
+    <string name="total">Total</string>
+    <string name="delete">Delete</string>
+    <string-array name="planets_array">
+        <item>District</item>
+        <item>State</item>
+        <item>Location</item>
+    </string-array>
+
+</resources>
