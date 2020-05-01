@@ -63,8 +63,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"/>
+            android:background="@drawable/botton_custom"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"/>
 
         <TableRow
             android:id="@+id/trdistrict"
@@ -166,12 +168,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/update"
+            android:background="@drawable/botton_custom"
+            android:textColor="@android:color/white"
             android:layout_gravity="center"/>
         <Button
             android:id="@+id/delete_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/botton_custom"
+            android:textColor="@android:color/white"
             android:text="@string/delete"
             android:layout_gravity="center"/>
 
