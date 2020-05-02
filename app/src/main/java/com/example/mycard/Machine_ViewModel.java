@@ -18,7 +18,7 @@ public class Machine_ViewModel extends AndroidViewModel {
          repositry = new Machine_Repositry(application);
          getmachine = repositry.getMechine();
     }
-    public LiveData<List<Machine_db>> getprofiledata() {
+    public LiveData<List<Machine_db>>getmachine() {
         return getmachine;
     }
     public void insert(Machine_db machine_db){ repositry.insertdata(machine_db);}
