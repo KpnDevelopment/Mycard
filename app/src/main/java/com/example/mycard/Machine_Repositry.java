@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Machine_Repositry {
     private Machine_Dao machine_dao;
-    private LiveData<List<Machine_db>>machine;
+    private LiveData<List<Mdb_datbase>>machine;
 
     Machine_Repositry(Application application){
-        Machine_db machine_db=Machine_db.getdatabase(application);
+        Mdb_datbase mdb_datbase=Machine_db.getdatabase(application);
         machine_dao=machine_db.machine_dao();
         machine=machine_dao.getMechine();
     }
