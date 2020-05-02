@@ -11,7 +11,7 @@ public class Machine_Repositry {
     private LiveData<List<Mdb_datbase>>machine;
 
     Machine_Repositry(Application application){
-        Mdb_datbase mdb_datbase=Machine_db.getdatabase(application);
+        Mdb_datbase mdb_datbase=Mdb_datbase.getdatabase(application);
         machine_dao=machine_db.machine_dao();
         machine=machine_dao.getMechine();
     }
