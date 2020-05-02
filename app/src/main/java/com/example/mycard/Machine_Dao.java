@@ -19,4 +19,5 @@ public interface Machine_Dao {
     void update(Machine_db machine_db);
 
 
+
 }

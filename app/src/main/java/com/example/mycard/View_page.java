@@ -24,7 +24,7 @@ public class View_page extends AppCompatActivity {
         setContentView(R.layout.activity_view_page);
         recyclerView=findViewById(R.id.view_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        viewbtn=findViewById(R.id.view_btn);
+        viewbtn=findViewById(R.id.View_btn);
         viewbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +32,7 @@ public class View_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        getTasks();
+//        getTasks();
     }
 
     private void getTasks() {
