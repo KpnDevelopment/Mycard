@@ -1,5 +1,6 @@
 package com.example.mycard;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -8,9 +9,8 @@ import java.io.Serializable;
 
 @Entity
 public class Machine_db implements Serializable {
-
-//    @PrimaryKey(autoGenerate = true)
-//    private int id;
+    @PrimaryKey
+    @NonNull
 
     @ColumnInfo(name = "serialno")
     private String serialno;
