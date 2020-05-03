@@ -61,7 +61,7 @@
         <Button
             android:id="@+id/searching_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="@string/search"
             android:background="@drawable/botton_custom"
             android:textColor="@android:color/white"
@@ -165,7 +165,7 @@
         <Button
             android:id="@+id/update_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:text="@string/update"
             android:background="@drawable/botton_custom"
@@ -174,7 +174,7 @@
         <Button
             android:id="@+id/delete_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:background="@drawable/botton_custom"
             android:textColor="@android:color/white"

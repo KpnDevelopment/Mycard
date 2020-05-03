@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity
-public class Machine_db implements Serializable {
+public class Machine_db  {
     @PrimaryKey
     @NonNull
 

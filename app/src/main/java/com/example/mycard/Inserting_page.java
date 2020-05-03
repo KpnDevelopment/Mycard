@@ -43,7 +43,10 @@ public class Inserting_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 savetask();
+                btnClick();
+
             }
+
         });
 
     }
@@ -57,4 +60,7 @@ public class Inserting_page extends AppCompatActivity {
 
     }
 
+    public void btnClick() {
+        Toast.makeText(this,"Add Sucessful",Toast.LENGTH_SHORT).show();
+    }
 }

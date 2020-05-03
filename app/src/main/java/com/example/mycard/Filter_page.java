@@ -2,6 +2,9 @@ package com.example.mycard;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,10 +23,12 @@ import com.example.mycard.Adapter.Filter_adapter;
 import com.example.mycard.Model.Filter_model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Filter_page extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
     String[] Sort={"District","State","Location"};
+    Machine_ViewModel machine_viewModel;
     private RecyclerView filmech;
     private LinearLayout fillayout;
     Filter_adapter adapter_fil;
@@ -56,8 +61,12 @@ public class Filter_page extends AppCompatActivity implements
         filmech.setAdapter(adapter_fil);
 
 
-
-
+        machine_viewModel=new ViewModelProvider(this).get(Machine_ViewModel.class);
+        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
+            @Override
+            public void onChanged(List<Machine_db> machine_dbs) {
+                adapter_fil.Setdata(machine_dbs);    }
+        });
     }
 
     @Override

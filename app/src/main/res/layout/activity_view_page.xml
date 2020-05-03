@@ -11,169 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/view"
+        android:textStyle="bold"
         android:textSize="25sp"
         android:gravity="center"
-        tools:ignore="MissingConstraints" />
-    <TableLayout
-
-        android:id="@+id/tabla_cuerpo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <TableRow
-            android:id="@+id/trserialno"
-            android:weightSum="2"
+    <LinearLayout
+        android:id="@+id/Adapterleaner"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:padding="5dp"
-                android:text="@string/serialno"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/vsnopva_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/enter_the_serial_no"
-                android:textSize="20sp"
-                android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-        <Button
-            android:id="@+id/View_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view"
-            android:background="@drawable/botton_custom"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"/>
-
-
-
-
-        <TableRow
-            android:id="@+id/trdistrict"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:paddingBottom="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:textSize="20sp"
-                android:text="@string/district"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/no_data"
-                android:textSize="20sp"
-                android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/trState"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:paddingBottom="20dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:text="@string/state"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
-
-
-            <TextView
-                android:id="@+id/gender_pva_txt"
-                android:layout_width="wrap_content"
-                android:textSize="20sp"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_data"
-                android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/trlocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:paddingBottom="20dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:text="@string/location"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
-
-
-            <TextView
-                android:id="@+id/dept_pva_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:hint="@string/no_data"
-                android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/adapter_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
-            <LinearLayout
-                android:id="@+id/Adapterleaner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/view_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </TableRow>
-
-
-
-    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
