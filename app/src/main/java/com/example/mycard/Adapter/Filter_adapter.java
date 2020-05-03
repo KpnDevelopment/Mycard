@@ -36,24 +36,30 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
 
     @Override
     public void onBindViewHolder(@NonNull Filter_adapter.Holder holder, int position) {
-//        Filter_model Fmodel=fm.get(position);
-//        holder.serialno.setText(Fmodel.getSerialno());
-//        holder.district.setText(Fmodel.getDistrict());
-//        holder.location.setText(Fmodel.getLocation());
-//        holder.state.setText(Fmodel.getState());
-        Machine_db machine_db=machine_dbs.get(position);
-        holder.serialno.setText(machine_db.getSerialno());
-        holder.district.setText(machine_db.getDistrict());
-        holder.state.setText(machine_db.getState());
-        holder.location.setText(machine_db.getLocation());
+        if (machine_dbs!=null){
+            Machine_db machine_db=machine_dbs.get(position);
+            holder.serialno.setText(machine_db.getSerialno());
+            holder.district.setText(machine_db.getDistrict());
+            holder.state.setText(machine_db.getState());
+            holder.location.setText(machine_db.getLocation());
+        }
+
 
     }
 
     @Override
     public int getItemCount() {
+        if (machine_dbs!=null){
         return machine_dbs.size();
     }
-
+        else {
+            return 0;
+        }
+        }
+        public void Setdata(List<Machine_db>machine_db){
+        machine_dbs=machine_db;
+        notifyDataSetChanged();
+        }
     public class Holder extends RecyclerView.ViewHolder {
         public TextView serialno,district,location,state;
         public Holder(@NonNull View itemView) {

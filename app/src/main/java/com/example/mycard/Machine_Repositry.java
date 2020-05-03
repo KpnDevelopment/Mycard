@@ -21,6 +21,7 @@ public class Machine_Repositry {
     void insertdata(final Machine_db machine_db){
         Mdb_datbase.dbwrite.execute(()->{
             machine_dao.insert(machine_db);
+
         });
     }
 }
