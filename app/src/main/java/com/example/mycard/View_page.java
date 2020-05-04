@@ -12,13 +12,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import com.example.mycard.Adapter.Filter_adapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class View_page extends AppCompatActivity {
+public class View_page extends AppCompatActivity{
     Machine_ViewModel machine_viewModel;
     private RecyclerView recyclerView;
     private Button viewbtn;
@@ -52,4 +53,5 @@ public class View_page extends AppCompatActivity {
 //        getTasks();
 
     }
+
 }

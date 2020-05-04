@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View_page">
-
     <TextView
+        android:id="@+id/xt_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/view"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:gravity="center"
+        android:text="@string/view"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -22,11 +21,17 @@
         android:id="@+id/Adapterleaner"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+<!--        <SearchView-->
+<!--            android:id="@+id/viewSearch"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/view_recycler"
             android:layout_width="match_parent"

@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Filter_page extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
-    String[] Sort={"District","State","Location"};
+    String[] Sort={"Serialno","District","State","Location"};
     Machine_ViewModel machine_viewModel;
     private RecyclerView filmech;
     private LinearLayout fillayout;

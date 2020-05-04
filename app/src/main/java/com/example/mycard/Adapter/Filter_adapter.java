@@ -70,4 +70,6 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
             state=itemView.findViewById(R.id.sta_txt);
         }
     }
+
+    
 }
