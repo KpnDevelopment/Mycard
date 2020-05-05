@@ -40,7 +40,7 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_page);
-        searchView.findViewById(R.id.Searchviewp);
+        searchView=findViewById(R.id.Searchviewp);
         searchView.setOnQueryTextListener(this);
 //        fm.add(new Filter_model("1010","palakkad","mannarkkad","kerala"));
 //        fm.add(new Filter_model("1011","malappuram","angadippuram","kerala"));
