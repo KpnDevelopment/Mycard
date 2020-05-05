@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_grid"
+    android:background="@drawable/background"
     tools:context=".Inserting_page">
     <TextView
         android:layout_width="match_parent"
@@ -152,7 +152,6 @@
             android:id="@+id/submit_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:textColor="@android:color/white"
             android:text="@string/submit"
             android:onClick="btnClick"
             android:layout_marginStart="80dp"

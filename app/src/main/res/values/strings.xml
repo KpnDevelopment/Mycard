@@ -26,6 +26,7 @@
     <string name="mechine">Mechine</string>
     <string name="total">Total</string>
     <string name="delete">Delete</string>
+    <string name="appname">Dr.Mech</string>
     <string-array name="planets_array">
         <item>District</item>
         <item>State</item>

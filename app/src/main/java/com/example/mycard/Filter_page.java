@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,9 +26,9 @@ import com.example.mycard.Model.Filter_model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Filter_page extends AppCompatActivity implements
-        AdapterView.OnItemSelectedListener {
-    String[] Sort={"Serialno","District","State","Location"};
+public class Filter_page extends AppCompatActivity implements SearchView.OnQueryTextListener {
+//    String[] Sort={"Serialno","District","State","Location"};
+    SearchView searchView;
     Machine_ViewModel machine_viewModel;
     private RecyclerView filmech;
     private LinearLayout fillayout;
@@ -39,21 +40,23 @@ public class Filter_page extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_page);
+        searchView.findViewById(R.id.Searchviewp);
+        searchView.setOnQueryTextListener(this);
 //        fm.add(new Filter_model("1010","palakkad","mannarkkad","kerala"));
 //        fm.add(new Filter_model("1011","malappuram","angadippuram","kerala"));
 //        fm.add(new Filter_model("1012","kozhikkode","faruk","kerala"));
 //        fm.add(new Filter_model("1013","eranakulam","kochi","kerala"));
 //        fm.add(new Filter_model("1014","palakkad","ottappalam","kerala"));
-        filmech=findViewById(R.id.filterrecycler);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(this);
+//        filmech=findViewById(R.id.filterrecycler);
+//        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+//        spinner.setOnItemSelectedListener(this);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.planets_array, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+//        spinner.setAdapter(adapter);
         LinearLayoutManager Lmgr = new LinearLayoutManager(getApplicationContext());
         RecyclerView.LayoutManager recylmgr=Lmgr;
         filmech.setLayoutManager(recylmgr);
@@ -69,18 +72,31 @@ public class Filter_page extends AppCompatActivity implements
         });
     }
 
+
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(),Sort[position] , Toast.LENGTH_LONG).show();
-
-
+    public boolean onQueryTextSubmit(String query) {
+        return false;
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-
+    public boolean onQueryTextChange(String newText) {
+        String text =newText;
+        adapter_fil.getFilter().filter(newText);
+        return false;
     }
+
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        Toast.makeText(getApplicationContext(),Sort[position] , Toast.LENGTH_LONG).show();
+//
+//
+//    }
+
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//
+//    }
 
 }
 

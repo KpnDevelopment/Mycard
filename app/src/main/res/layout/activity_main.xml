@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_grid"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -111,7 +111,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:drawableTop="@drawable/icon_upadte_sany"
-                        android:drawableTint="@color/cardview_dark_background"
                         android:text="@string/update"
                         android:textColor="@android:color/black" />
 

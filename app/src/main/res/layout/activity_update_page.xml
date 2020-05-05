@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/background_grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Update_page">
 
 
@@ -64,7 +64,6 @@
             android:layout_height="30dp"
             android:text="@string/search"
             android:background="@drawable/botton_custom"
-            android:textColor="@android:color/white"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"/>
 
@@ -169,7 +168,6 @@
             android:layout_weight="1"
             android:text="@string/update"
             android:background="@drawable/botton_custom"
-            android:textColor="@android:color/white"
             android:layout_gravity="center"/>
         <Button
             android:id="@+id/delete_btn"
@@ -177,7 +175,6 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:background="@drawable/botton_custom"
-            android:textColor="@android:color/white"
             android:text="@string/delete"
             android:layout_gravity="center"/>
 

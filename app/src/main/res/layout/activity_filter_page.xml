@@ -4,152 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_grid"
     tools:context=".Filter_page">
 
-    <TextView
-        android:id="@+id/HeadFilter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/filter"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0" />
-    <TableLayout
-
-        android:id="@+id/tabla_cuerpo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
 
-    <TableRow
-        android:id="@+id/trfilter"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
+<!--    <TableLayout-->
 
-        app:layout_constraintBottom_toBottomOf="@+id/HeadFilter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/category_txt"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textSize="20sp"
-            android:layout_marginStart="5dp"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_weight="1"
-            android:layout_width="149dp"
-            android:padding="5dp"
-            android:layout_height="43dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.64"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01" />
-
-    </TableRow>
-    <TableRow
-        android:id="@+id/Name_txt"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:layout_marginStart="5dp"
-            android:padding="5dp"
-            android:text="@string/name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black" />
+<!--        android:id="@+id/tabla_cuerpo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
 
-        <EditText
-            android:id="@+id/Name_pva_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Enter the Name"
-            android:textSize="20sp"
-            android:padding="5dp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+<!--    <TableRow-->
+<!--        android:id="@+id/trfilter"-->
+<!--        android:weightSum="2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="5dp"-->
 
-    </TableRow>
-        <Button
-            android:id="@+id/Vsearch_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/submit"
-            android:textColor="@android:color/white"
-            android:background="@drawable/botton_custom"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"/>
-        <TableRow
-            android:id="@+id/Total_txt"
-            android:weightSum="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp">
+<!--        app:layout_constraintBottom_toBottomOf="@+id/HeadFilter"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:padding="3dp"
-                android:text="@string/total"
-                android:layout_marginStart="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
-            <TextView
-                android:id="@+id/total_pva"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:padding="3dp"
-                android:text="@string/no_data"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/category_txt"-->
+<!--            android:layout_weight="1"-->
+<!--            android:padding="5dp"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_marginStart="5dp"/>-->
 
-        </TableRow>
+<!--        <Spinner-->
+<!--            android:id="@+id/spinner"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="149dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_height="43dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.64"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.01" />-->
 
+<!--    </TableRow>-->
+<!--    <TableRow-->
+<!--        android:id="@+id/Name_txt"-->
+<!--        android:weightSum="2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="5dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:text="@string/name"-->
+<!--            android:textAppearance="?android:attr/textAppearanceMedium"-->
+<!--            android:textColor="@android:color/black" />-->
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/Name_pva_txt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="Enter the Name"-->
+<!--            android:textSize="20sp"-->
+<!--            android:padding="5dp"-->
+<!--            android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+<!--    </TableRow>-->
+<!--        <Button-->
+<!--            android:id="@+id/Vsearch_btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:text="@string/submit"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:background="@drawable/botton_custom"-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:layout_marginEnd="80dp"/>-->
+<!--        <TableRow-->
+<!--            android:id="@+id/Total_txt"-->
+<!--            android:weightSum="2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingBottom="5dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textSize="15sp"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="@string/total"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"-->
+<!--                android:textColor="@android:color/black" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/total_pva"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textSize="15sp"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="@string/no_data"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"-->
+<!--                android:textColor="@android:color/black" />-->
+
+<!--        </TableRow>-->
+
+<!--   -->
+
+<!--    </TableLayout>-->
     <LinearLayout
         android:id="@+id/Adapterleaner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/HeadFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/filter"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <SearchView
+            android:id="@+id/Searchviewp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/filterrecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
