@@ -16,7 +16,8 @@ import java.util.List;
 public interface Machine_Dao {
     @Query("SELECT * FROM Machine_db")
     LiveData<List<Machine_db>>getAll();
-    //@Query("SELECT * FROM Machine_db WHERE ")
+    @Query("SELECT * FROM Machine_db WHERE serialno=:string OR district=:string OR state=:string OR location=:string")
+    LiveData<List<Machine_db>> getfilter(String string);
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Machine_db machine_db);
     @Delete

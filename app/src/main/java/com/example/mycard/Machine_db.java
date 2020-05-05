@@ -9,8 +9,8 @@ import java.io.Serializable;
 
 @Entity
 public class Machine_db  {
-    @PrimaryKey
-    @NonNull
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
     @ColumnInfo(name = "serialno")
     private String serialno;
@@ -32,16 +32,16 @@ public class Machine_db  {
         this.location = location;
     }
 
-    //getetr & setter
+//    getetr & setter
 
 
-//    public int getId() {
-//        return id;
-//    }
+    public int getId() {
+        return id;
+    }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getSerialno() {
         return serialno;

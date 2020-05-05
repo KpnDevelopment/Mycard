@@ -19,7 +19,7 @@ import com.example.mycard.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> implements Filterable {
+public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> {
     LayoutInflater inflater;
     Context context;
     List<Machine_db> machine_dbs;
@@ -67,40 +67,40 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
         notifyDataSetChanged();
         }
 
-    @Override
-    public Filter getFilter() {
-
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                String charstring=charSequence.toString();
-                if (charstring.isEmpty()){
-                    machine_dbs=mechineModelList; //
-                }
-                else {
-                    List<Machine_db>filteredList=new ArrayList<>();
-                    for (Machine_db row:mechineModelList)                 //
-                    {
-                        if (row.getSerialno().toLowerCase().contains(charstring.toLowerCase()) || row.getDistrict().toLowerCase().contains(charstring.toLowerCase()) ||
-                    row.getLocation().toLowerCase().contains(charstring.toLowerCase()) ||  row.getState().toLowerCase().contains(charstring.toLowerCase())){
-                            filteredList.add(row);
-                    }
-                    }
-                    machine_dbs=filteredList;
-                }
-               FilterResults filterResults=new FilterResults();
-                filterResults.values=machine_dbs;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults results) {
-                machine_dbs=(ArrayList<Machine_db>)results.values;
-                notifyDataSetChanged();
-
-            }
-        };
-    }
+//    @Override
+//    public Filter getFilter() {
+//
+//        return new Filter() {
+//            @Override
+//            protected FilterResults performFiltering(CharSequence charSequence) {
+//                String charstring=charSequence.toString();
+//                if (charstring.isEmpty()){
+//                    machine_dbs=mechineModelList; //
+//                }
+//                else {
+//                    List<Machine_db>filteredList=new ArrayList<>();
+//                    for (Machine_db row:mechineModelList)                 //
+//                    {
+//                        if (row.getSerialno().toLowerCase().contains(charstring.toLowerCase()) || row.getDistrict().toLowerCase().contains(charstring.toLowerCase()) ||
+//                    row.getLocation().toLowerCase().contains(charstring.toLowerCase()) ||  row.getState().toLowerCase().contains(charstring.toLowerCase())){
+//                            filteredList.add(row);
+//                    }
+//                    }
+//                    machine_dbs=filteredList;
+//                }
+//               FilterResults filterResults=new FilterResults();
+//                filterResults.values=machine_dbs;
+//                return filterResults;
+//            }
+//
+//            @Override
+//            protected void publishResults(CharSequence charSequence, FilterResults results) {
+//                machine_dbs=(ArrayList<Machine_db>)results.values;
+//                notifyDataSetChanged();
+//
+//            }
+//        };
+//    }
 
     public class Holder extends RecyclerView.ViewHolder {
         public TextView serialno,district,location,state;

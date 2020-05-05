@@ -63,9 +63,8 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
         adapter_fil = new Filter_adapter(Filter_page.this,machine_dbs);
         filmech.setAdapter(adapter_fil);
 
-
         machine_viewModel=new ViewModelProvider(this).get(Machine_ViewModel.class);
-        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
+        machine_viewModel.reMechine().observe(this, new Observer<List<Machine_db>>() {
             @Override
             public void onChanged(List<Machine_db> machine_dbs) {
                 adapter_fil.Setdata(machine_dbs);    }
@@ -81,7 +80,7 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
     @Override
     public boolean onQueryTextChange(String newText) {
         String text =newText;
-        adapter_fil.getFilter().filter(newText);
+        machine_viewModel.pass(text);
         return false;
     }
 

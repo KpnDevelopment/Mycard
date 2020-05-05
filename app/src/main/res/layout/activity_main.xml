@@ -54,6 +54,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
 
                 <TextView
@@ -61,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:drawableTop="@drawable/icons_view_sany"
-                    android:text="View"
+                    android:text="@string/view"
                     android:textColor="@android:color/black" />
             </androidx.cardview.widget.CardView>
 
@@ -73,6 +74,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
 
                 <TextView
@@ -104,6 +106,7 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <TextView
@@ -124,6 +127,7 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <TextView
@@ -131,7 +135,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:drawableTop="@drawable/icon_insert_sany"
-                        android:drawableTint="@color/cardview_dark_background"
                         android:text="Add"
                         android:textColor="@android:color/black" />
 
@@ -155,6 +158,7 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
                     <TextView
@@ -162,7 +166,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:drawableTop="@drawable/settings"
-                        android:drawableTint="@color/cardview_dark_background"
                         android:text="Settings"
                         android:textColor="@android:color/black" />
 
