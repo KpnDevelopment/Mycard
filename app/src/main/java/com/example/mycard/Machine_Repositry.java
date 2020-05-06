@@ -10,6 +10,7 @@ public class Machine_Repositry {
     private Machine_Dao machine_dao;
     private LiveData<List<Machine_db>>machine;
     private LiveData<List<Machine_db>>machinefil;
+    private List<Machine_db>updatefil;
 
     Machine_Repositry(Application application){
         Mdb_datbase mdb_datbase=Mdb_datbase.getdatabase(application);
@@ -22,6 +23,10 @@ public class Machine_Repositry {
     LiveData<List<Machine_db>>getMachinefil(String s){
         machinefil=machine_dao.getfilter(s);
         return machinefil;
+    }
+    List<Machine_db>getupdate(String st){                //
+        updatefil=machine_dao.getupdate(st);
+        return updatefil;
     }
     void insertdata(final Machine_db machine_db){
         Mdb_datbase.dbwrite.execute(()->{

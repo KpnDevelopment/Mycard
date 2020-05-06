@@ -25,6 +25,7 @@
         android:id="@+id/tabla_cuerpo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +49,7 @@
 
 
             <EditText
-                android:id="@+id/acno_pva_txt"
+                android:id="@+id/serialno_e_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -59,10 +60,11 @@
 
         </TableRow>
         <Button
-            android:id="@+id/searching_btn"
+            android:id="@+id/usearching_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/search"
+            android:textColor="@android:color/black"
             android:background="@drawable/botton_custom"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"/>
@@ -85,6 +87,7 @@
 
 
             <EditText
+                android:id="@+id/district_e_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -115,7 +118,7 @@
 
 
             <EditText
-                android:id="@+id/state_pva_txt"
+                android:id="@+id/state_e_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -145,7 +148,7 @@
 
 
             <EditText
-                android:id="@+id/dept_pva_txt"
+                android:id="@+id/location_e_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -162,20 +165,22 @@
             android:paddingBottom="20dp">
 
         <Button
-            android:id="@+id/update_btn"
+            android:id="@+id/uupdate_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:text="@string/update"
+            android:textColor="@android:color/black"
             android:background="@drawable/botton_custom"
             android:layout_gravity="center"/>
         <Button
-            android:id="@+id/delete_btn"
+            android:id="@+id/udelete_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:background="@drawable/botton_custom"
             android:text="@string/delete"
+            android:textColor="@android:color/black"
             android:layout_gravity="center"/>
 
         </TableRow>

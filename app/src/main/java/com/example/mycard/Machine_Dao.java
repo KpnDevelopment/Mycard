@@ -24,6 +24,9 @@ public interface Machine_Dao {
     void delete(Machine_db machine_db);
     @Update
     void update(Machine_db machine_db);
+    
+    @Query("SELECT * FROM Machine_db WHERE serialno=:st") //
+    List<Machine_db>getupdate(String st);
 
 
 

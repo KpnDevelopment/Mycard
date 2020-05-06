@@ -1,12 +1,16 @@
 package com.example.mycard;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,12 +49,29 @@ public class Inserting_page extends AppCompatActivity {
                 savetask();
                 btnClick(v);
 
+
             }
 
         });
 
     }
+
+    private void btnClick(View v) {
+        savetask();
+        clear();
+    }
+
     private void savetask(){
+        if (TextUtils.isEmpty(serialno_txt.getText().toString().trim()) || TextUtils.isEmpty(district_txt.getText().toString().trim())
+                || TextUtils.isEmpty(state_txt.getText().toString().trim()) || TextUtils.isEmpty(state_txt.getText().toString().trim())
+                || TextUtils.isEmpty(location_txt.getText().toString().trim())
+        ) {
+            state_txt.setError("Field can't empty");
+            district_txt.setError("Field can't empty");
+            state_txt.setError("Field can't empty");
+            location_txt.setError("Field can't empty");
+        }
+        else {
         final String serialno=serialno_txt.getText().toString().trim();
         final String district=district_txt.getText().toString().trim();
         final String state=state_txt.getText().toString().trim();
@@ -60,11 +81,34 @@ public class Inserting_page extends AppCompatActivity {
 
     }
 
-//    public void btnClick() {
-//
-//    }
 
-    public void btnClick(View view) {
-        Toast.makeText(this,"Add Sucessful",Toast.LENGTH_SHORT).show();
+    }
+    public void  clear(){
+        serialno_txt.setText(" ");
+        district_txt.setText(" ");
+        state_txt.setText(" ");
+        location_txt.setText(" ");
+    }
+    public void ShowDialog(View view){
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setTitle("Dr Mech");
+        builder.setMessage("Are you sure you want to Exit");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                Toast.makeText(getApplicationContext(),"Exit",Toast.LENGTH_SHORT);
+                finish();
+            }
+        })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Cancel",Toast.LENGTH_SHORT);
+                        finish();
+                    }
+                });
+        //create return alert
+        builder.create().show();
     }
 }

@@ -41,6 +41,7 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_page);
         searchView=findViewById(R.id.Searchviewp);
+        filmech=findViewById(R.id.filterrecycler);
         searchView.setOnQueryTextListener(this);
 //        fm.add(new Filter_model("1010","palakkad","mannarkkad","kerala"));
 //        fm.add(new Filter_model("1011","malappuram","angadippuram","kerala"));
@@ -60,11 +61,11 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
         LinearLayoutManager Lmgr = new LinearLayoutManager(getApplicationContext());
         RecyclerView.LayoutManager recylmgr=Lmgr;
         filmech.setLayoutManager(recylmgr);
-        adapter_fil = new Filter_adapter(Filter_page.this,machine_dbs);
+        adapter_fil = new Filter_adapter(this,machine_dbs);
         filmech.setAdapter(adapter_fil);
 
         machine_viewModel=new ViewModelProvider(this).get(Machine_ViewModel.class);
-        machine_viewModel.reMechine().observe(this, new Observer<List<Machine_db>>() {
+        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
             @Override
             public void onChanged(List<Machine_db> machine_dbs) {
                 adapter_fil.Setdata(machine_dbs);    }
@@ -74,13 +75,13 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        adapter_fil.getFilter().filter(query);
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        String text =newText;
-        machine_viewModel.pass(text);
+       adapter_fil.getFilter().filter(newText);
         return false;
     }
 

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".Inserting_page">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,15 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
     <TableLayout
 
         android:id="@+id/tabla_cuerpo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <TableRow
             android:id="@+id/trserialno"
@@ -154,10 +158,10 @@
             android:layout_height="30dp"
             android:text="@string/submit"
             android:onClick="btnClick"
+            android:textColor="@android:color/black"
             android:layout_marginStart="80dp"
             android:background="@drawable/botton_custom"
             android:layout_marginEnd="80dp"/>
-
 
 
 

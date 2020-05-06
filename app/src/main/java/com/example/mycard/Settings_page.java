@@ -14,7 +14,7 @@ public class Settings_page extends AppCompatActivity {
         setContentView(R.layout.activity_settings_page);
     }
 
-    public void darkmode(View view) {
-        Switch darkSwitch = (Switch) findViewById(R.id.darkswitch);
-    }
+//    public void darkmode(View view) {
+//        Switch darkSwitch = (Switch) findViewById(R.id.darkswitch);
+//    }
 }

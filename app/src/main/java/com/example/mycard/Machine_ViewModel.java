@@ -14,6 +14,7 @@ public class Machine_ViewModel extends AndroidViewModel {
     private Machine_Repositry repositry;
     private LiveData<List<Machine_db>>getmachine;
     private LiveData<List<Machine_db>>getfilter;
+    private List<Machine_db>getup;
     private MutableLiveData<String>mutableLiveData=new MutableLiveData<>();
 
 
