@@ -23,8 +23,11 @@ public class Update_page extends AppCompatActivity {
     EditText edistrict;
     EditText estate;
     EditText elocation;
+    EditText ewarranty;
+    EditText eworking;
     Machine_ViewModel machine_viewModel;
-    ArrayList<Machine_db> machine_dbs = new ArrayList<>();
+    List<Machine_db> machine_dbs;
+    Machine_Dao machine_dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,39 +40,43 @@ public class Update_page extends AppCompatActivity {
         edistrict = findViewById(R.id.district_e_txt);
         estate = findViewById(R.id.state_e_txt);
         elocation = findViewById(R.id.location_e_txt);
+        ewarranty=findViewById(R.id.warranty_txt);
+        eworking=findViewById(R.id.working_txt);
         machine_viewModel = new ViewModelProvider(this).get(Machine_ViewModel.class);
-        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
+        machine_viewModel.reMechine().observe(this, new Observer<List<Machine_db>>() {
             @Override
             public void onChanged(List<Machine_db> machine_dbs) {
-//
-
+                fil(machine_dbs);
             }
         });
         searchbtn.setOnClickListener(new View.OnClickListener() {            //operate Search Btn
             @Override
             public void onClick(View v) {
-                //
+                String val =eserialno.getText().toString();
+                machine_viewModel.pass(val);
+
             }
         });
         updatebtn.setOnClickListener(new View.OnClickListener() {            //operate update Btn
             @Override
             public void onClick(View v) {
-                ShowDialogup(v);
+                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),ewarranty.getText().toString(),eworking.getText().toString());
+                ShowDialogup();
                 clear();
                 //
             }
         });
-        deletebtn.setOnClickListener(new View.OnClickListener() {           //operate delete Btn
+        deletebtn.setOnClickListener(new View.OnClickListener() {           //operate delete Btne
             @Override
             public void onClick(View v) {
-                ShowDialog(v);
-                clear();
+                machine_viewModel.delete(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),ewarranty.getText().toString(),eworking.getText().toString());
+                ShowDialog();
 
             }
         });
     }
 
-    public void ShowDialog(View view) {
+    public void ShowDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setTitle("Dr Mech");
@@ -77,21 +84,21 @@ public class Update_page extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_LONG);
 
             }
         })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_LONG);
                     }
                 });
         //create return alert
         builder.create().show();
     }
 
-    public void ShowDialogup(View view) {
+    public void ShowDialogup() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setTitle("Dr Mech");
@@ -99,24 +106,39 @@ public class Update_page extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG);
+                finish();
 
             }
         })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_LONG);
                     }
                 });
         //create return alert
         builder.create().show();
     }
-    public void  clear(){
-        eserialno.setText(" ");
-        edistrict.setText(" ");
-        estate.setText(" ");
-        elocation.setText(" ");
-    }
-}
 
+    public void clear() {
+        eserialno.setText(null);
+        edistrict.setText(null);
+        estate.setText(null);
+        elocation.setText(null);
+        ewarranty.setText(null);
+        eworking.setText(null);
+    }
+
+
+    public void fil(List<Machine_db> machine_dbs) {
+        if (machine_dbs.size() > 0) {
+            edistrict.setText(machine_dbs.get(0).getDistrict());
+            estate.setText(machine_dbs.get(0).getState());
+            elocation.setText(machine_dbs.get(0).getLocation());
+            ewarranty.setText(machine_dbs.get(0).getLocation());
+            eworking.setText(machine_dbs.get(0).getLocation());
+        }
+    }
+
+}

@@ -8,14 +8,15 @@
         android:label="@string/appname"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".Start_page" />
+        android:theme="@style/AppTheme">
+        <activity android:name=".Settings_About_Btn"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Settings_page" />
         <activity android:name=".View_page" />
         <activity android:name=".Update_page" />
         <activity android:name=".Filter_page" />
         <activity android:name=".Inserting_page" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Start_page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

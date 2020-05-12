@@ -24,16 +24,40 @@ public class Machine_db  {
     @ColumnInfo(name = "location")
     private String location;
 
-    public Machine_db( String serialno, String district, String state, String location) {
+    @ColumnInfo(name = "warranty" )
+    private String warranty;
+
+    @ColumnInfo(name = "working")
+    private String working;
+
+    public Machine_db( String serialno, String district, String state, String location,String warranty,String working) {
 //        this.id = id;
         this.serialno = serialno;
         this.district = district;
         this.state = state;
         this.location = location;
+        this.warranty=warranty;
+        this.working=working;
     }
 
 //    getetr & setter
 
+
+    public String getWarranty() {
+        return warranty;
+    }
+
+    public void setWarranty(String warranty) {
+        this.warranty = warranty;
+    }
+
+    public String getWorking() {
+        return working;
+    }
+
+    public void setWorking(String working) {
+        this.working = working;
+    }
 
     public int getId() {
         return id;

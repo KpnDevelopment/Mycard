@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Mycard</string>
     <string name="update">Update</string>
     <string name="insert">Insert</string>
     <string name="enter_the_serial_no">Enter the Serial No</string>
@@ -27,6 +26,12 @@
     <string name="total">Total</string>
     <string name="delete">Delete</string>
     <string name="appname">Dr.Mech</string>
+    <string name="about_us">About Us</string>
+    <string name="dr_mech">Dr.Mech</string>
+    <string name="warranty">Warranty</string>
+    <string name="status">STATUS</string>
+    <string name="working">Working</string>
+    <string name="run_breakdown_idle">Run/Breakdown/Idle</string>
     <string-array name="planets_array">
         <item>District</item>
         <item>State</item>

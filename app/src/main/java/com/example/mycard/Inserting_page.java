@@ -23,6 +23,8 @@ public class Inserting_page extends AppCompatActivity {
     EditText district_txt;
     EditText state_txt;
     EditText location_txt;
+    EditText war_txt;
+    EditText work_txt;
     Button submit_btn;
     Machine_ViewModel machine_viewModel;
 
@@ -35,6 +37,8 @@ public class Inserting_page extends AppCompatActivity {
         district_txt=findViewById(R.id.district_txt);
         state_txt=findViewById(R.id.state_txt);
         location_txt=findViewById(R.id.location_txt);
+        war_txt=findViewById(R.id.warranty_txt);
+        work_txt=findViewById(R.id.working_txt);
         submit_btn=findViewById(R.id.submit_btn);
         machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
@@ -47,8 +51,7 @@ public class Inserting_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 savetask();
-                btnClick(v);
-
+                clear();
 
             }
 
@@ -56,27 +59,27 @@ public class Inserting_page extends AppCompatActivity {
 
     }
 
-    private void btnClick(View v) {
-        savetask();
-        clear();
-    }
-
     private void savetask(){
         if (TextUtils.isEmpty(serialno_txt.getText().toString().trim()) || TextUtils.isEmpty(district_txt.getText().toString().trim())
                 || TextUtils.isEmpty(state_txt.getText().toString().trim()) || TextUtils.isEmpty(state_txt.getText().toString().trim())
-                || TextUtils.isEmpty(location_txt.getText().toString().trim())
+                || TextUtils.isEmpty(location_txt.getText().toString().trim()) || TextUtils.isEmpty(war_txt.getText().toString().trim()) ||
+                TextUtils.isEmpty(work_txt.getText().toString().trim())
         ) {
-            state_txt.setError("Field can't empty");
+            serialno_txt.setError("Field can't empty");
             district_txt.setError("Field can't empty");
             state_txt.setError("Field can't empty");
             location_txt.setError("Field can't empty");
+            war_txt.setError("Field can't empty");
+            work_txt.setError("Field can't empty");
         }
         else {
         final String serialno=serialno_txt.getText().toString().trim();
         final String district=district_txt.getText().toString().trim();
         final String state=state_txt.getText().toString().trim();
         final String location=location_txt.getText().toString().trim();
-        Machine_db machine_db=new Machine_db(serialno,district,state,location);
+        final String warranty=war_txt.getText().toString().trim();
+        final String working=work_txt.getText().toString().trim();
+        Machine_db machine_db=new Machine_db(serialno,district,state,location,warranty,working);
         machine_viewModel.insert(machine_db);
 
     }
@@ -84,31 +87,33 @@ public class Inserting_page extends AppCompatActivity {
 
     }
     public void  clear(){
-        serialno_txt.setText(" ");
-        district_txt.setText(" ");
-        state_txt.setText(" ");
-        location_txt.setText(" ");
+        serialno_txt.setText(null);
+        district_txt.setText(null);
+        state_txt.setText(null);
+        location_txt.setText(null);
+        war_txt.setText(null);
+        work_txt.setText(null);
     }
-    public void ShowDialog(View view){
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        builder.setCancelable(false);
-        builder.setTitle("Dr Mech");
-        builder.setMessage("Are you sure you want to Exit");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                Toast.makeText(getApplicationContext(),"Exit",Toast.LENGTH_SHORT);
-                finish();
-            }
-        })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"Cancel",Toast.LENGTH_SHORT);
-                        finish();
-                    }
-                });
-        //create return alert
-        builder.create().show();
-    }
+//    public void ShowDialog(View view){
+//        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+//        builder.setCancelable(false);
+//        builder.setTitle("Dr Mech");
+//        builder.setMessage("Are you sure you want to Exit");
+//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int id) {
+//                Toast.makeText(getApplicationContext(),"Exit",Toast.LENGTH_SHORT);
+//                finish();
+//            }
+//        })
+//                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(),"Cancel",Toast.LENGTH_SHORT);
+//                        finish();
+//                    }
+//                });
+//        //create return alert
+//        builder.create().show();
+//    }
 }

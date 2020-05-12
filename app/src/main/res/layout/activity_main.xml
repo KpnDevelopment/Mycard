@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@android:color/white"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -14,26 +14,25 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-
         <RelativeLayout
             android:id="@+id/relative_layt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_height="wrap_content">
+
 
 
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/card_icorn"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="165dp"
+            android:foreground="@color/colorPrimary"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:orientation="vertical"
-            android:layout_below="@+id/card_icorn"
             android:weightSum="2">
 
 
@@ -44,7 +43,8 @@
             android:weightSum="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="100dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/view_btn"
@@ -53,6 +53,8 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
@@ -74,6 +76,8 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
                 app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -106,6 +110,8 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
@@ -127,6 +133,8 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
@@ -158,6 +166,8 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 

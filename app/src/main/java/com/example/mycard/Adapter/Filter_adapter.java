@@ -49,6 +49,8 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
             holder.district.setText(machine_db.getDistrict());
             holder.state.setText(machine_db.getState());
             holder.location.setText(machine_db.getLocation());
+            holder.warranty.setText(machine_db.getWarranty());
+            holder.working.setText(machine_db.getWorking());
         }
 
 
@@ -84,7 +86,8 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
                     for (Machine_db row:mechineModelList)                 //
                     {
                         if (row.getSerialno().toLowerCase().contains(charstring.toLowerCase()) || row.getDistrict().toLowerCase().contains(charstring.toLowerCase()) ||
-                    row.getLocation().toLowerCase().contains(charstring.toLowerCase()) ||  row.getState().toLowerCase().contains(charstring.toLowerCase())){
+                    row.getLocation().toLowerCase().contains(charstring.toLowerCase()) ||  row.getState().toLowerCase().contains(charstring.toLowerCase())
+                        || row.getWarranty().toLowerCase().contains(charstring.toLowerCase()) || row.getWorking().toLowerCase().contains(charstring.toLowerCase())){
                             filteredList.add(row);
                     }
                     }
@@ -93,7 +96,7 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
                FilterResults filterResults=new FilterResults();
                 filterResults.values=machine_dbs;
                 return filterResults;
-            }
+        }
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults results) {
@@ -105,13 +108,15 @@ public class Filter_adapter extends RecyclerView.Adapter<Filter_adapter.Holder> 
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        public TextView serialno,district,location,state;
+        public TextView serialno,district,location,state,warranty,working;
         public Holder(@NonNull View itemView) {
             super(itemView);
             serialno=itemView.findViewById(R.id.ser_txt);
             district=itemView.findViewById(R.id.dis_txt);
             location=itemView.findViewById(R.id.loc_txt);
             state=itemView.findViewById(R.id.sta_txt);
+            warranty=itemView.findViewById(R.id.war_txt);
+            working=itemView.findViewById(R.id.work_txt);
         }
     }
 

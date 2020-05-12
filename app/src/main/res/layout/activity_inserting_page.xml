@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@android:color/white"
     tools:context=".Inserting_page">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/insert"
-        android:gravity="center"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TableLayout
 
@@ -52,8 +49,12 @@
                 android:id="@+id/serialno_txt"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:inputType="textCapSentences"
+                android:textColor="@android:color/black"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="@string/enter_the_serial_no"
+                android:textColorHint="@color/hinttxtcolor"
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -84,6 +85,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/enter_the_district"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/hinttxtcolor"
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -116,6 +121,10 @@
                 android:textSize="20sp"
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_the_state"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/hinttxtcolor"
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -147,6 +156,82 @@
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:hint="@string/enter_the_location"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textColorHint="@color/hinttxtcolor"
+                android:textColor="@android:color/black"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse" />
+
+        </TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:textSize="15dp"
+            android:text="@string/status"
+            android:textStyle="italic"
+            android:textColor="@android:color/holo_red_light" />
+        <TableRow
+            android:id="@+id/trworking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:text="@string/working"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:id="@+id/working_txt"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content"
+                android:hint="@string/run_breakdown_idle"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textColorHint="@color/hinttxtcolor"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/trstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:text="@string/warranty"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:id="@+id/warranty_txt"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content"
+                android:hint="Out/On warranty"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                android:textColorHint="@color/hinttxtcolor"
+                android:textSize="20sp"
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -157,8 +242,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/submit"
-            android:onClick="btnClick"
-            android:textColor="@android:color/black"
+            android:textColor="@color/btntxtcolor"
             android:layout_marginStart="80dp"
             android:background="@drawable/botton_custom"
             android:layout_marginEnd="80dp"/>
