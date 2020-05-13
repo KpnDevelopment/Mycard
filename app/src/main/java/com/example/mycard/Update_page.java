@@ -7,11 +7,14 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -28,8 +31,11 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
     EditText estate;
     EditText elocation;
     EditText ewarranty;
-    EditText eworking;
     Spinner spinner;
+    RadioGroup radioGroup;
+    RadioButton rb1;
+    RadioButton rb2;
+    String warranty;
     Machine_ViewModel machine_viewModel;
     List<Machine_db> machine_dbs;
     Machine_Dao machine_dao;
@@ -45,8 +51,24 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         edistrict = findViewById(R.id.district_e_txt);
         estate = findViewById(R.id.state_e_txt);
         elocation = findViewById(R.id.location_e_txt);
-        ewarranty=findViewById(R.id.warranty_e_txt);
         spinner=findViewById(R.id.spinner_work_up);
+        rb1=findViewById(R.id.onradio_up);
+        rb2=findViewById(R.id.outradio_up);
+        radioGroup=findViewById(R.id.rgroup_up);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.onradio_up:
+                        warranty="ON";
+                        break;
+                    case R.id.outradio_up:
+                        warranty="OUT";
+                        break;
+
+                }
+            }
+        });
         spinner.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this,
                 R.array.planets_array,android.R.layout.simple_spinner_item);
@@ -72,7 +94,7 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         updatebtn.setOnClickListener(new View.OnClickListener() {            //operate update Btn
             @Override
             public void onClick(View v) {
-                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),ewarranty.getText().toString(),eworking.getText().toString());
+                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),spinner.getSelectedItem().toString());
                 ShowDialogup();
                 clear();
                 //
@@ -81,7 +103,7 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         deletebtn.setOnClickListener(new View.OnClickListener() {           //operate delete Btne
             @Override
             public void onClick(View v) {
-                machine_viewModel.delete(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),ewarranty.getText().toString(),eworking.getText().toString());
+                machine_viewModel.delete(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),warranty,spinner.getSelectedItem().toString());
                 ShowDialog();
 
             }

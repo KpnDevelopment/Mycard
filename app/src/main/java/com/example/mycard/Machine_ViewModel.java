@@ -28,8 +28,8 @@ public class Machine_ViewModel extends AndroidViewModel {
         return getmachine;
     }
     public void insert(Machine_db machine_db){ repositry.insertdata(machine_db);}
-    public void update(String locate,String dist,String stat,String slno,String war,String work){repositry.getupdate(locate, dist, stat, slno, war, work);}
-    protected void delete(String locate,String dist,String stat,String slno,String war,String work){repositry.getdelete(locate, dist, stat, slno, war, work);}
+    public void update(String locate,String dist,String stat,String slno,String war,String spin){repositry.getupdate(locate, dist, stat, slno, war, spin);}
+    protected void delete(String locate,String dist,String stat,String slno,String war,String spin){repositry.getdelete(locate, dist, stat, slno, war, spin);}
     void pass(String st){
         mutableLiveData.setValue(st);
     }
