@@ -53,19 +53,28 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:clickable="true"
-                app:cardElevation="2dp"
+                app:cardElevation="8dp"
+                android:padding="4dp"
                 app:cardUseCompatPadding="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/icons_view_sany"
+                    android:src="@drawable/icons_view_sany"
+                    android:text="@string/view" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
                     android:text="@string/view"
-                    android:textColor="@android:color/black" />
+                    android:layout_marginTop="95dp"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -76,18 +85,25 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="2dp"
+                android:padding="4dp"
+                app:cardElevation="8dp"
                 app:cardUseCompatPadding="true"
                 app:cardBackgroundColor="@color/cardview_light_background"
                 android:foreground="?android:attr/selectableItemBackground">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/icon_filter_sany"
-                    android:text="Filter"
-                    android:textColor="@android:color/black" />
+                    android:src="@drawable/icon_filter_sany"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:text="@string/filter"
+                    android:layout_marginTop="95dp"/>
 
             </androidx.cardview.widget.CardView>
         </TableRow>
@@ -110,18 +126,26 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="2dp"
+                    app:cardElevation="8dp"
+                    android:padding="4dp"
                     app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
-                        android:drawableTop="@drawable/icon_upadte_sany"
+                        android:src="@drawable/icon_upadte_sany"
+                        android:text="@string/update" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
                         android:text="@string/update"
-                        android:textColor="@android:color/black" />
+                        android:layout_marginTop="95dp"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -133,18 +157,25 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="2dp"
+                    app:cardElevation="8dp"
+                    android:padding="4dp"
                     app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
-                        android:drawableTop="@drawable/icon_insert_sany"
-                        android:text="Add"
-                        android:textColor="@android:color/black" />
+                        android:src="@drawable/icon_insert_sany" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:text="@string/add"
+                        android:layout_marginTop="95dp"/>
 
                 </androidx.cardview.widget.CardView>
             </TableRow>
@@ -166,18 +197,26 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardElevation="2dp"
+                    app:cardElevation="8dp"
+                    android:padding="4dp"
                     app:cardUseCompatPadding="true"
                     app:cardBackgroundColor="@color/cardview_light_background"
                     android:foreground="?android:attr/selectableItemBackground">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
-                        android:drawableTop="@drawable/settings"
-                        android:text="Settings"
-                        android:textColor="@android:color/black" />
+                        android:src="@drawable/settings" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:text="@string/settings"
+                        android:layout_marginTop="95dp"/>
 
                 </androidx.cardview.widget.CardView>
 

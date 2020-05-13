@@ -15,7 +15,7 @@ public class Start_page extends AppCompatActivity {
         Thread welcomethread =new Thread(){
             public void run(){
                 try {
-                    sleep(3*1000);
+                    sleep(1*1000);
                     Intent i=new Intent(getBaseContext(),MainActivity.class);
                     startActivity(i);
                     finish();

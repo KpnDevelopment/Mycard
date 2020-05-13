@@ -40,8 +40,8 @@ public class Update_page extends AppCompatActivity {
         edistrict = findViewById(R.id.district_e_txt);
         estate = findViewById(R.id.state_e_txt);
         elocation = findViewById(R.id.location_e_txt);
-        ewarranty=findViewById(R.id.warranty_txt);
-        eworking=findViewById(R.id.working_txt);
+        eworking=findViewById(R.id.working_e_txt);
+        ewarranty=findViewById(R.id.warranty_e_txt);
         machine_viewModel = new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.reMechine().observe(this, new Observer<List<Machine_db>>() {
             @Override
@@ -136,8 +136,8 @@ public class Update_page extends AppCompatActivity {
             edistrict.setText(machine_dbs.get(0).getDistrict());
             estate.setText(machine_dbs.get(0).getState());
             elocation.setText(machine_dbs.get(0).getLocation());
-            ewarranty.setText(machine_dbs.get(0).getLocation());
-            eworking.setText(machine_dbs.get(0).getLocation());
+            ewarranty.setText(machine_dbs.get(0).getWarranty());
+            eworking.setText(machine_dbs.get(0).getWorking());
         }
     }
 
