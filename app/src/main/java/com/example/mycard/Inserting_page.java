@@ -39,7 +39,6 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
     Filter_adapter filter_adapter;
     Machine_ViewModel machine_viewModel;
     Spinner spinner;
-    Spinner warspinner;
     RadioButton ron;
     RadioButton rout;
     RadioGroup rg;
@@ -57,31 +56,30 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         rg=findViewById(R.id.rgroup);
         ron=findViewById(R.id.onradio);
         rout=findViewById(R.id.outradio);
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int i) {
-                switch (i){
-                    case R.id.onradio:
-                        warranty=ron.getText().toString().trim();
-                        break;
-                    case R.id.outradio:
-                      warranty=rout.getText().toString().trim();
-                        break;
-                }
-
-            }
-        });
+//        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int i) {
+//                switch (i){
+//                    case R.id.onradio:
+//                        warranty=ron.getText().toString().trim();
+//                        break;
+//                    case R.id.outradio:
+//                      warranty=rout.getText().toString().trim();
+//                        break;
+//                }
+//
+//            }
+//        });
         submit_btn=findViewById(R.id.submit_btn);
-       warspinner=findViewById(R.id.spinner_work);
-        warspinner.setOnItemSelectedListener(this);
+       spinner=findViewById(R.id.spinner_work);
+        spinner.setOnItemSelectedListener(this);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.planets_array,android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-
-        warspinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);
         recyclerView.setAdapter(filter_adapter);
         machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
