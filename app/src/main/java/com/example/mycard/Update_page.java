@@ -94,7 +94,7 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         updatebtn.setOnClickListener(new View.OnClickListener() {            //operate update Btn
             @Override
             public void onClick(View v) {
-                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),spinner.getSelectedItem().toString());
+                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),spinner.getSelectedItem().toString(),warranty);
                 ShowDialogup();
                 clear();
                 //
@@ -160,8 +160,6 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         edistrict.setText(null);
         estate.setText(null);
         elocation.setText(null);
-        ewarranty.setText(null);
-        eworking.setText(null);
     }
 
 
@@ -170,8 +168,6 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
             edistrict.setText(machine_dbs.get(0).getDistrict());
             estate.setText(machine_dbs.get(0).getState());
             elocation.setText(machine_dbs.get(0).getLocation());
-            ewarranty.setText(machine_dbs.get(0).getWarranty());
-            eworking.setText(machine_dbs.get(0).getWorking());
         }
     }
 
