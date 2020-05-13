@@ -8,14 +8,18 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Update_page extends AppCompatActivity {
+public class Update_page extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    String[] Sort={"Idle","BreakDown","Run"};
     Button searchbtn;
     Button updatebtn;
     Button deletebtn;
@@ -25,6 +29,7 @@ public class Update_page extends AppCompatActivity {
     EditText elocation;
     EditText ewarranty;
     EditText eworking;
+    Spinner spinner;
     Machine_ViewModel machine_viewModel;
     List<Machine_db> machine_dbs;
     Machine_Dao machine_dao;
@@ -40,8 +45,15 @@ public class Update_page extends AppCompatActivity {
         edistrict = findViewById(R.id.district_e_txt);
         estate = findViewById(R.id.state_e_txt);
         elocation = findViewById(R.id.location_e_txt);
-        eworking=findViewById(R.id.working_e_txt);
         ewarranty=findViewById(R.id.warranty_e_txt);
+        spinner=findViewById(R.id.spinner_work_up);
+        spinner.setOnItemSelectedListener(this);
+        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this,
+                R.array.planets_array,android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+        spinner.setAdapter(adapter);
         machine_viewModel = new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.reMechine().observe(this, new Observer<List<Machine_db>>() {
             @Override
@@ -141,4 +153,15 @@ public class Update_page extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getApplicationContext(),Sort[position],Toast.LENGTH_LONG).show();
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

@@ -193,18 +193,18 @@
                 android:text="@string/working"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@android:color/black" />
-            <EditText
-                android:id="@+id/working_e_txt"
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/spinner_work_up"
                 android:layout_weight="1"
-                android:textColor="@android:color/black"
-                android:layout_height="wrap_content"
-                android:hint="@string/run_breakdown_idle"
-                android:singleLine="true"
-                android:textColorHint="@color/hinttxtcolor"
-                android:textSize="20sp"
+                android:layout_width="149dp"
                 android:padding="5dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_height="43dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.64"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01" />
 
         </TableRow>
         <TableRow

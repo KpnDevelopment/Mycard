@@ -43,7 +43,7 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
     RadioButton ron;
     RadioButton rout;
     RadioGroup rg;
-    RadioGroup warranty;
+    String warranty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,18 +62,18 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
             public void onCheckedChanged(RadioGroup group, int i) {
                 switch (i){
                     case R.id.onradio:
-                       final String warranty=ron.getText().toString().trim();
+                        warranty=ron.getText().toString().trim();
                         break;
                     case R.id.outradio:
-                     final String warranty=rout.getText().toString().trim();
+                      warranty=rout.getText().toString().trim();
                         break;
                 }
 
             }
         });
         submit_btn=findViewById(R.id.submit_btn);
-       spinner=findViewById(R.id.spinner_work);
-        spinner.setOnItemSelectedListener(this);
+       warspinner=findViewById(R.id.spinner_work);
+        warspinner.setOnItemSelectedListener(this);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.planets_array,android.R.layout.simple_spinner_item);
@@ -81,7 +81,7 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
 
-        spinner.setAdapter(adapter);
+        warspinner.setAdapter(adapter);
         recyclerView.setAdapter(filter_adapter);
         machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
