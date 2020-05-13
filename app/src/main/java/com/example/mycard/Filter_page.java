@@ -32,7 +32,7 @@ public class Filter_page extends AppCompatActivity implements SearchView.OnQuery
     Machine_ViewModel machine_viewModel;
     private RecyclerView filmech;
     private LinearLayout fillayout;
-    Filter_adapter adapter_fil;
+    Filter_adapter  adapter_fil;
     ArrayList<Machine_db> machine_dbs=new ArrayList<>();
 
 

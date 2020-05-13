@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -12,13 +13,21 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.mycard.Adapter.Filter_adapter;
 
 import java.util.List;
 
-public class Inserting_page extends AppCompatActivity {
+public class Inserting_page extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    String[] Sort={"Idle","BreakDown","Run"};
     EditText serialno_txt;
     EditText district_txt;
     EditText state_txt;
@@ -26,8 +35,15 @@ public class Inserting_page extends AppCompatActivity {
     EditText war_txt;
     EditText work_txt;
     Button submit_btn;
+    RecyclerView recyclerView;
+    Filter_adapter filter_adapter;
     Machine_ViewModel machine_viewModel;
-
+    Spinner spinner;
+    Spinner warspinner;
+    RadioButton ron;
+    RadioButton rout;
+    RadioGroup rg;
+    RadioGroup warranty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +53,41 @@ public class Inserting_page extends AppCompatActivity {
         district_txt=findViewById(R.id.district_txt);
         state_txt=findViewById(R.id.state_txt);
         location_txt=findViewById(R.id.location_txt);
-        war_txt=findViewById(R.id.warranty_txt);
-        work_txt=findViewById(R.id.working_txt);
+//        war_txt=findViewById(R.id.warranty_txt);;
+        rg=findViewById(R.id.rgroup);
+        ron=findViewById(R.id.onradio);
+        rout=findViewById(R.id.outradio);
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                switch (i){
+                    case R.id.onradio:
+                       final String warranty=ron.getText().toString().trim();
+                        break;
+                    case R.id.outradio:
+                     final String warranty=rout.getText().toString().trim();
+                        break;
+                }
+
+            }
+        });
         submit_btn=findViewById(R.id.submit_btn);
+       spinner=findViewById(R.id.spinner_work);
+        spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        R.array.planets_array,android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+
+        spinner.setAdapter(adapter);
+        recyclerView.setAdapter(filter_adapter);
         machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
         machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
             @Override
             public void onChanged(List<Machine_db> machine_dbs) {
+                filter_adapter.Setdata(machine_dbs);
 
             }
         });
@@ -62,23 +106,19 @@ public class Inserting_page extends AppCompatActivity {
     private void savetask(){
         if (TextUtils.isEmpty(serialno_txt.getText().toString().trim()) || TextUtils.isEmpty(district_txt.getText().toString().trim())
                 || TextUtils.isEmpty(state_txt.getText().toString().trim()) || TextUtils.isEmpty(state_txt.getText().toString().trim())
-                || TextUtils.isEmpty(location_txt.getText().toString().trim()) || TextUtils.isEmpty(war_txt.getText().toString().trim()) ||
-                TextUtils.isEmpty(work_txt.getText().toString().trim())
+                || TextUtils.isEmpty(location_txt.getText().toString().trim())
         ) {
             serialno_txt.setError("Field can't empty");
             district_txt.setError("Field can't empty");
             state_txt.setError("Field can't empty");
             location_txt.setError("Field can't empty");
-            war_txt.setError("Field can't empty");
-            work_txt.setError("Field can't empty");
         }
         else {
         final String serialno=serialno_txt.getText().toString().trim();
         final String district=district_txt.getText().toString().trim();
         final String state=state_txt.getText().toString().trim();
         final String location=location_txt.getText().toString().trim();
-        final String warranty=war_txt.getText().toString().trim();
-        final String working=work_txt.getText().toString().trim();
+        final String working=spinner.getSelectedItem().toString().trim();
         Machine_db machine_db=new Machine_db(serialno,district,state,location,warranty,working);
         machine_viewModel.insert(machine_db);
 
@@ -92,7 +132,18 @@ public class Inserting_page extends AppCompatActivity {
         state_txt.setText(null);
         location_txt.setText(null);
         war_txt.setText(null);
-        work_txt.setText(null);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getApplicationContext(),Sort[position],Toast.LENGTH_LONG).show();
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 //    public void ShowDialog(View view){
 //        AlertDialog.Builder builder= new AlertDialog.Builder(this);
