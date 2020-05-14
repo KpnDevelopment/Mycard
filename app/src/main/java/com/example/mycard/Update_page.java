@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Update_page extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    String[] Sort={"Idle","BreakDown","Run"};
+    String[] Sort={"Idle","Running","BreakDown"};
     Button searchbtn;
     Button updatebtn;
     Button deletebtn;
@@ -60,10 +60,10 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.onradio_up:
-                        warranty="ON";
+                        warranty="Under Warranty";
                         break;
                     case R.id.outradio_up:
-                        warranty="OUT";
+                        warranty="Out of Warranty";
                         break;
 
                 }
@@ -94,16 +94,13 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         updatebtn.setOnClickListener(new View.OnClickListener() {            //operate update Btn
             @Override
             public void onClick(View v) {
-                machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),spinner.getSelectedItem().toString(),warranty);
                 ShowDialogup();
-                clear();
                 //
             }
         });
         deletebtn.setOnClickListener(new View.OnClickListener() {           //operate delete Btne
             @Override
             public void onClick(View v) {
-                machine_viewModel.delete(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),warranty,spinner.getSelectedItem().toString());
                 ShowDialog();
 
             }
@@ -118,6 +115,8 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
+                delete();
+                clear();
                 Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_LONG);
 
             }
@@ -140,7 +139,9 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
+                update();
                 Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG);
+                clear();
                 finish();
 
             }
@@ -181,5 +182,14 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+    public void delete(){
+        machine_viewModel.delete(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),warranty,spinner.getSelectedItem().toString());
+
+
+    }
+
+    public void update(){
+        machine_viewModel.update(elocation.getText().toString(),edistrict.getText().toString(),estate.getText().toString(),eserialno.getText().toString(),warranty,spinner.getSelectedItem().toString());
     }
 }

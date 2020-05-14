@@ -27,7 +27,7 @@ import com.example.mycard.Adapter.Filter_adapter;
 import java.util.List;
 
 public class Inserting_page extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    String[] Sort={"Idle","BreakDown","Run"};
+    String[] Sorting={"Idle","Running","BreakDown"};
     EditText serialno_txt;
     EditText district_txt;
     EditText state_txt;
@@ -56,23 +56,24 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         rg=findViewById(R.id.rgroup);
         ron=findViewById(R.id.onradio);
         rout=findViewById(R.id.outradio);
-//        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int i) {
-//                switch (i){
-//                    case R.id.onradio:
-//                        warranty=ron.getText().toString().trim();
-//                        break;
-//                    case R.id.outradio:
-//                      warranty=rout.getText().toString().trim();
-//                        break;
-//                }
-//
-//            }
-//        });
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                switch (i){
+                    case R.id.onradio:
+                        warranty="Under Warranty";
+                        break;
+                    case R.id.outradio:
+                        warranty="Out of warranty";
+                        break;
+                }
+
+            }
+        });
         submit_btn=findViewById(R.id.submit_btn);
        spinner=findViewById(R.id.spinner_work);
         spinner.setOnItemSelectedListener(this);
+        machine_viewModel = new ViewModelProvider(this).get(Machine_ViewModel.class);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.planets_array,android.R.layout.simple_spinner_item);
@@ -80,15 +81,14 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
         spinner.setAdapter(adapter);
-        recyclerView.setAdapter(filter_adapter);
-        machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
-        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
-            @Override
-            public void onChanged(List<Machine_db> machine_dbs) {
-                filter_adapter.Setdata(machine_dbs);
-
-            }
-        });
+//        machine_viewModel= new ViewModelProvider(this).get(Machine_ViewModel.class);
+//        machine_viewModel.getmachine().observe(this, new Observer<List<Machine_db>>() {
+//            @Override
+//            public void onChanged(List<Machine_db> machine_dbs) {
+//                filter_adapter.Setdata(machine_dbs);
+//
+//            }
+//        });
         submit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,12 +129,11 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         district_txt.setText(null);
         state_txt.setText(null);
         location_txt.setText(null);
-        war_txt.setText(null);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(),Sort[position],Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),Sorting[position],Toast.LENGTH_LONG).show();
 
 
     }

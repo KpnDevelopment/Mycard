@@ -37,9 +37,9 @@
     <string name="on">ON</string>
     <string name="out">OUT</string>
     <string-array name="planets_array">
-        <item>District</item>
-        <item>State</item>
-        <item>Location</item>
+        <item> Idle</item>
+        <item> Running</item>
+        <item> Breakadown</item>
     </string-array>
 
 </resources>

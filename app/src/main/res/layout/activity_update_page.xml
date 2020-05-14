@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context=".Update_page">
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toStartOf="parent">
         <TextView
+            android:id="@+id/update_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/update"
@@ -21,23 +28,20 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:textColor="@android:color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
-    <TableLayout
-
-        android:id="@+id/tabla_cuerpo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
 
-        <TableRow
+        <LinearLayout
             android:id="@+id/trserialno"
             android:weightSum="2"
             android:layout_width="match_parent"
@@ -67,18 +71,21 @@
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        </TableRow>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
         <Button
             android:id="@+id/usearching_btn"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/search"
             android:textColor="@color/btntxtcolor"
-            android:background="@drawable/botton_custom"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"/>
+            android:background="@drawable/botton_custom" />
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:id="@+id/trdistrict"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,9 +115,9 @@
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:id="@+id/trState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,9 +148,9 @@
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:id="@+id/trlocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,9 +181,9 @@
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:id="@+id/trworking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -195,19 +202,12 @@
                 android:textColor="@android:color/black" />
             <Spinner
                 android:id="@+id/spinner_work_up"
-                android:layout_weight="1"
-                android:layout_width="149dp"
-                android:padding="5dp"
-                android:layout_height="43dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.64"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.01" />
+                android:spinnerMode="dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        </TableRow>
-        <TableRow
+        </LinearLayout>
+        <LinearLayout
             android:id="@+id/trstatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -231,6 +231,7 @@
                 android:weightSum="2">
                 <RadioGroup
                     android:id="@+id/rgroup_up"
+                    android:weightSum="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -238,19 +239,21 @@
                         android:id="@+id/onradio_up"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/on"
-                        android:layout_marginStart="35dp" />
+                        android:layout_weight="1"
+                        android:text="@string/on" />
 
                     <RadioButton
                         android:id="@+id/outradio_up"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="3dp"
                         android:text="@string/out" />
                 </RadioGroup>
             </LinearLayout>
 
-        </TableRow>
-        <TableRow
+        </LinearLayout>
+        <LinearLayout
             android:id="@+id/trbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -264,6 +267,8 @@
             android:layout_weight="1"
             android:text="@string/update"
             android:textColor="@color/btntxtcolor"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/botton_custom"
             android:layout_gravity="center"/>
         <Button
@@ -271,12 +276,14 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_weight="1"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/botton_custom"
             android:text="@string/delete"
             android:textColor="@color/btntxtcolor"
             android:layout_gravity="center"/>
 
-        </TableRow>
-    </TableLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>

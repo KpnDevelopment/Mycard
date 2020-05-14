@@ -13,10 +13,13 @@ public class Settings_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_page);
+
     }
 
     public void aboutbtn(View view) {
         startActivity(new Intent(getApplicationContext(),Settings_About_Btn.class));
+        Intent i=new Intent(getApplicationContext(),Settings_About_Btn.class);
+startActivity(i);
     }
 
 //    public void darkmode(View view) {
