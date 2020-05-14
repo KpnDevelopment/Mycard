@@ -116,8 +116,8 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 delete();
-                clear();
                 Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_LONG);
+                clear();
 
             }
         })
@@ -161,6 +161,7 @@ public class Update_page extends AppCompatActivity implements AdapterView.OnItem
         edistrict.setText(null);
         estate.setText(null);
         elocation.setText(null);
+        radioGroup.setOnCheckedChangeListener(null);
     }
 
 

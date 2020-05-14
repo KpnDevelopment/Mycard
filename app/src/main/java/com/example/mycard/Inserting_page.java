@@ -129,6 +129,7 @@ public class Inserting_page extends AppCompatActivity implements AdapterView.OnI
         district_txt.setText(null);
         state_txt.setText(null);
         location_txt.setText(null);
+        rg.setOnCheckedChangeListener(null);
     }
 
     @Override
