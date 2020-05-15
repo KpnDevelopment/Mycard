@@ -6,6 +6,15 @@
     android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Start_page">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -27,12 +36,18 @@
     android:gravity="center"
     android:textColor="@android:color/holo_red_dark"
     android:text="@string/dr_mech"
-    android:textSize="25sp"
+    android:textSize="20sp"
     android:textStyle="bold" />
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+
 
 </LinearLayout>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyProgressBar"
+            android:layout_gravity="center"
+            android:layout_marginEnd="70dp"
+            android:progress="75"
+            android:layout_marginStart="70dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

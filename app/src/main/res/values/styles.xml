@@ -17,4 +17,10 @@
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:windowBackground">@drawable/mech_icon</item>
     </style>
+    <style name="MyProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressBackgroundTint">#3DE1F6</item>
+        <item name="android:progressTint">#b71c1c</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:width">200dp</item>
+    </style>
 </resources>

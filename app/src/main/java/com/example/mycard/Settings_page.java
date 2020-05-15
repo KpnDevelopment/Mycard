@@ -19,11 +19,13 @@ public class Settings_page extends AppCompatActivity {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Settings_page.this,Settings_About_Btn.class));
+                startActivity(new Intent(getApplicationContext(),Settings_About_Btn.class));
+
             }
         });
 
     }
+
 //    public void darkmode(View view) {
 //        Switch darkSwitch = (Switch) findViewById(R.id.darkswitch);
 //    }

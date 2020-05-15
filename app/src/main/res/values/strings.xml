@@ -37,6 +37,9 @@
     <string name="on">ON</string>
     <string name="out">Out</string>
     <string name="under">Under</string>
+    <string name="our_mission">- Our Mission-</string>
+    <string name="simplify_the_efficient_interface">"Simplify The Efficient Interface"</string>
+    <string name="our_group">- Our Group -</string>
     <string-array name="planets_array">
         <item> Idle</item>
         <item> Running</item>
